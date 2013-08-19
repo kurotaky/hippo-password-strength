@@ -32,6 +32,10 @@ Use the plugin as follows:
 $('#password').hippoPasswordStrength();
 ```
 
+## Notes
+
+* Requires jQuery 1.6+.
+
 ## License
 
 This plugin is available under [the MIT license](http://mths.be/mit).
