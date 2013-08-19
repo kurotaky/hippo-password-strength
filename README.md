@@ -1,4 +1,4 @@
-jquery.hippoPasswordStrength.js
+jquery.hippo-password-strength.js
 ===============================
 
-hippo password strength checker
+hippo password strength checker.
