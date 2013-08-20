@@ -34,7 +34,7 @@ This plugin is available under [the MIT license](http://mths.be/mit).
 
 ## Thanks to…
 
-* [@kihaco](http://github.com/kihaco)
+* [@kihaco](http://github.com/kihaco) creating hippo images
 
 ## Contributing
 
