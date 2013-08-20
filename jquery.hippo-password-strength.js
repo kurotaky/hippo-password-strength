@@ -3,7 +3,7 @@
         this.bind('keyup focusout', function() {
             var password = $(this).val();
             passwordStrengthCheck(password);
-    });
+        });
 
         function passwordStrengthCheck(password) {
             var strengthLevel = getStrengthLevel(password);
@@ -18,7 +18,7 @@
             }
             if (password.length >= 6) {
                 strengthLevel = 2;
-			}
+            }
             if (password.length >= 8 && password.match(/[a-zA-Z]+/) && password.match(/[0-9]+/)) {
                 strengthLevel = 3;
             }
@@ -26,6 +26,6 @@
                 strengthLevel = 4;
             }
             return strengthLevel;
-		}
-	};
+        }
+    };
 })(jQuery);
