@@ -3,24 +3,16 @@ jquery.hippo-password-strength.js
 
 hippo password strength checker.
 
-## Demo
-<p>
-  <input id="password" type="password" size="30" name="params[password]" value="" />
-</p>
-<img id="strengthLevel" src="images/strength_1.gif">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://raw.github.com/kurotaky/hippo-password-strength/master/jquery.hippo-password-strength.js"></script>
-<script>
-$('#password').hippoPasswordStrength();
-</script>
+## Installation
+```html
+<script src="/path/to/jquery.hippo-password-strength.js"></script>
+```
 
 ## Example Usage
 ### HTML
 
 ```html
-<p>
-  <input id="password" type="password" size="30" name="params[password]" value="" />
-</p>
+<input id="password" type="password" size="30" name="params[password]" value="">
 <img id="strengthLevel" src="images/strength_1.gif">
 ```
 
