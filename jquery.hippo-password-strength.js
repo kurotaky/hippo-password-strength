@@ -2,16 +2,12 @@
     $.fn.hippoPasswordStrength = function() {
         this.bind('keyup focusout', function() {
             var password = $(this).val();
-            passwordStrengthCheck(password);
+            var strengthLevel = getStrengthLevel(password);
+            $("#strengthLevel").attr("src","images/strength_" + strengthLevel + ".gif");
         });
 
-        function passwordStrengthCheck(password) {
-            var strengthLevel = getStrengthLevel(password);
-            $("#strengthLevel").attr("src","/images/strength_" + stregnthLevel + ".gif");
-        }
-
         function getStrengthLevel(password) {
-            var strengthLevel = 0;
+            var strengthLevel = 1;
 
             if (password.length < 6) {
                 strengthLevel = 1;
@@ -24,6 +20,9 @@
             }
             if (password.length >= 12 && password.match(/[a-z]/) && password.match(/[A-Z]/) && password.match(/[0-9]/)) {
                 strengthLevel = 4;
+            }
+            if (password.match(/^(.)\1+$/)) {
+                strengthLevel = 1;
             }
             return strengthLevel;
         }
