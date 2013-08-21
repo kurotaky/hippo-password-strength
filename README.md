@@ -15,7 +15,7 @@ hippo password strength checker.
 ### HTML
 
 ```html
-<input id="password" type="password" size="30" name="params[password]" value="">
+<input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel">
 <img id="strengthLevel" src="images/strength_1.gif">
 ```
 
@@ -24,7 +24,7 @@ hippo password strength checker.
 Use the plugin as follows:
 
 ```js
-$('#password').hippoPasswordStrength();
+$('.password').hippoPasswordStrength();
 ```
 
 ## Notes
