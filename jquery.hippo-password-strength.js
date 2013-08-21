@@ -12,7 +12,7 @@
             if (password.length < 6) {
                 strengthLevel = 1;
             }
-            if (password.length >= 6) {
+            if (password.length >= 6 && password.match(/[a-zA-Z]+/) && password.match(/[0-9]+/)) {
                 strengthLevel = 2;
             }
             if (password.length >= 8 && password.match(/[a-zA-Z]+/) && password.match(/[0-9]+/)) {
