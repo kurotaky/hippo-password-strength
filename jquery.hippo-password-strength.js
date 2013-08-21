@@ -1,9 +1,11 @@
 (function($){
     $.fn.hippoPasswordStrength = function() {
-        this.bind('keyup focusout', function() {
-            var password = $(this).val();
-            var strengthLevel = getStrengthLevel(password);
-            $("#strengthLevel").attr("src","images/strength_" + strengthLevel + ".gif");
+        return this.each(function() {
+            $(this).bind('keyup focusout', function() {
+                var password = $(this).val();
+                var strengthLevel = getStrengthLevel(password);
+                $("#" + $(this).data("indicator")).attr("src","images/strength_" + strengthLevel + ".gif");
+            });
         });
 
         function getStrengthLevel(password) {
