@@ -3,6 +3,9 @@ jquery.hippo-password-strength.js
 
 hippo password strength checker.
 
+## Demo
+[Demo page is here.](http://kuro96.heteml.jp/hippo-password-strength/hippo.html)
+
 ## Installation
 ```html
 <script src="/path/to/jquery.hippo-password-strength.js"></script>
