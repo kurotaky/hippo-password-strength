@@ -21,6 +21,9 @@
             if (password.length >= 12 && password.match(/[a-z]/) && password.match(/[A-Z]/) && password.match(/[0-9]/)) {
                 strengthLevel = 4;
             }
+            if (password.match(/^(.)\1+$/)) {
+                strengthLevel = 1;
+            }
             return strengthLevel;
         }
     };
