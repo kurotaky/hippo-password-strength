@@ -31,13 +31,10 @@ $('.password').hippoPasswordStrength();
 
 * Requires jQuery 1.6+.
 
-## License
-
-This plugin is available under [the MIT license](http://mths.be/mit).
-
 ## Thanks to…
 
 * [@kihaco](http://github.com/kihaco) creating hippo images
+* [@gyugyu](http://github.com/gyugyu) adapt to class-based DOM
 
 ## Contributing
 
@@ -46,3 +43,7 @@ This plugin is available under [the MIT license](http://mths.be/mit).
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## License
+
+This plugin is available under [the MIT license](http://opensource.org/licenses/MIT).
