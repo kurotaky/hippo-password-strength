@@ -25,13 +25,13 @@
         function doesGetDataAttributes() {
             var splitted_version = $().jquery.split(".");
             if (+splitted_version[0] > 1) {
-              return true;
+                return true;
             }
             if (splitted_version[0] == 1 && +splitted_version[1] >= 5) {
-              return true;
+                return true;
             }
             if (splitted_version[0] == 1 && +splitted_version[1] >= 4 && +splitted_version[2] >= 3) {
-              return true;
+                return true;
             }
             return false;
         }
