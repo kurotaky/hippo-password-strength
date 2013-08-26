@@ -16,7 +16,34 @@ hippo password strength checker.
 
 ```html
 <input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel">
-<img id="strengthLevel" src="images/strength_1.gif">
+<img id="strengthLevel" class="indicator_strength1">
+```
+
+### CSS
+```css
+.indicator_strength1 {
+  width: 150px;
+  height: 22px;
+  background-image: url("images/strength_1.gif");
+}
+
+.indicator_strength2 {
+  width: 150px;
+  height: 22px;
+  background-image: url("images/strength_2.gif");
+}
+
+.indicator_strength3 {
+  width: 150px;
+  height: 22px;
+  background-image: url("images/strength_3.gif");
+}
+
+.indicator_strength4 {
+  width: 150px;
+  height: 22px;
+  background-image: url("images/strength_4.gif");
+}
 ```
 
 ### jQuery
@@ -25,11 +52,17 @@ Use the plugin as follows:
 
 ```js
 $('.password').hippoPasswordStrength();
+
+// Custom indicator prefix
+//
+// For example
+// level1: <img id="strengthLevel" class="pass_state01">
+// level2: <img id="strengthLevel" class="pass_state02">
+// ...
+$('.password').hippoPasswordStrength({
+    indicator_prefix: "pass_state0"
+});
 ```
-
-## Notes
-
-* Requires jQuery 1.6+.
 
 ## Thanks to…
 
