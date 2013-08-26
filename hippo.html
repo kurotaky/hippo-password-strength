@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="password_strength.css" />
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="jquery.hippo-password-strength.js"></script> 
+<script src="jquery.hippo-password-strength.js"></script>
 <script>
 $(function(){
-    $('.password').hippoPasswordStrength();
+    $('.password').hippoPasswordStrength({
+        // defalt: "password_strength"
+        indicator_prefix: "pass_state0"
+    });
 });
 </script>
 </head>
 <body>
 <input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel">
-<img id="strengthLevel" src="images/strength_1.gif">
+<img id="strengthLevel" class="pass_state01">
 </body>
 </html>
