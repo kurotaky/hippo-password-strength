@@ -19,6 +19,7 @@ hippo password strength checker.
 <img id="strengthLevel" class="indicator_strength1">
 ```
 
+### CSS
 ```css
 .indicator_strength1 {
   width: 150px;
