@@ -66,8 +66,9 @@ $('.password').hippoPasswordStrength({
 
 ## Thanks to…
 
-* [@kihaco](http://github.com/kihaco) creating hippo images
-* [@gyugyu](http://github.com/gyugyu) adapt to class-based DOM
+* [@kihaco](http://github.com/kihaco)
+* [@gyugyu](http://github.com/gyugyu)
+* [@kitak](http://github.com/kitak)
 
 ## Contributing
 
