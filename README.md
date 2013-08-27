@@ -16,30 +16,30 @@ hippo password strength checker.
 
 ```html
 <input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel">
-<img id="strengthLevel" class="indicator_strength1">
+<img id="strengthLevel" class="password_strength1">
 ```
 
 ### CSS
 ```css
-.indicator_strength1 {
+.password_strength1 {
   width: 150px;
   height: 22px;
   background-image: url("images/strength_1.gif");
 }
 
-.indicator_strength2 {
+.password_strength2 {
   width: 150px;
   height: 22px;
   background-image: url("images/strength_2.gif");
 }
 
-.indicator_strength3 {
+.password_strength3 {
   width: 150px;
   height: 22px;
   background-image: url("images/strength_3.gif");
 }
 
-.indicator_strength4 {
+.password_strength4 {
   width: 150px;
   height: 22px;
   background-image: url("images/strength_4.gif");
