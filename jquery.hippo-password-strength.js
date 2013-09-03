@@ -2,25 +2,46 @@
     $.fn.hippoPasswordStrength = function(options) {
         options = options || {};
 
-        return this.each(function() {
-            $(this).bind('keyup focusout', function() {
-                var indicator_prefix = !!options.indicator_prefix ?
-                                         options.indicator_prefix : "password_strength";
-                var password = $(this).val();
-                var strengthLevel = getStrengthLevel(password);
-
-                var $indicator = null;
-                if (doesGetDataAttributes()) {
-                    $indicator = $("#" + $(this).data("indicator"));
-                } else {
-                    $indicator = $("#" + $(this).attr("data-indicator"));
-                }
-                for (var i=1; i < 5; i++) {
-                    $indicator.removeClass(indicator_prefix + String(i));
-                }
-                $indicator.addClass(indicator_prefix + String(strengthLevel));
-            });
+        this.bind('focus', function() {
+            update.call(this);
         });
+
+        return this.each(function() {
+            var elem = this;
+
+            $(elem).bind('keyup', (function() {
+                var timerId = null;
+
+                return function() {
+                    if (timerId !== null) {
+                        return;
+                    }
+
+                    timerId = setTimeout(function() {
+                        update.call(elem);
+                        timerId = null;
+                    }, 500);
+                };
+            })());
+        });
+
+        function update() {
+            var indicator_prefix = !!options.indicator_prefix ?
+                                     options.indicator_prefix : "password_strength";
+            var password = $(this).val();
+            var strengthLevel = getStrengthLevel(password);
+
+            var $indicator = null;
+            if (doesGetDataAttributes()) {
+                $indicator = $("#" + $(this).data("indicator"));
+            } else {
+                $indicator = $("#" + $(this).attr("data-indicator"));
+            }
+            for (var i=1; i < 5; i++) {
+                $indicator.removeClass(indicator_prefix + String(i));
+            }
+            $indicator.addClass(indicator_prefix + String(strengthLevel));
+        }
 
         function doesGetDataAttributes() {
             var splitted_version = $().jquery.split(".");
