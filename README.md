@@ -69,6 +69,7 @@ $('.password').hippoPasswordStrength({
 * [@kihaco](http://github.com/kihaco)
 * [@gyugyu](http://github.com/gyugyu)
 * [@kitak](http://github.com/kitak)
+* [@f-kubotar](https://github.com/f-kubotar)
 
 ## Contributing
 
