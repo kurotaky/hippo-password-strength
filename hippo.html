@@ -7,15 +7,13 @@
 <script>
 $(function(){
     $('.password').hippoPasswordStrength({
-        indicator_path: "images/", // default "images/"
-        indicator_prefix: "strength_", // default "password_strength"
-        indicator_ext: "gif" // default "gif"
+        indicator_prefix: "pass_state0" // default "password_strength"
     });
 });
 </script>
 </head>
 <body>
 <input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel">
-<img id="strengthLevel" src="images/strength_1.gif">
+<img id="strengthLevel" class="pass_state01">
 </body>
 </html>
