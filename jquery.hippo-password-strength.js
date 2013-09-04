@@ -17,10 +17,11 @@
                         return;
                     }
 
+                    clearTimeout(timerId);
                     timerId = setTimeout(function() {
                         update.call(elem);
                         timerId = null;
-                    }, 500);
+                    }, 250);
                 };
             })());
         });
