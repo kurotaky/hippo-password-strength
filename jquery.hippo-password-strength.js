@@ -6,9 +6,7 @@
             update.call(this);
         });
 
-        return this.each(function() {
-            var elem = this;
-
+        return this.each(function(i, elem) {
             $(elem).bind('keyup', (function() {
                 var timerId = null;
 
