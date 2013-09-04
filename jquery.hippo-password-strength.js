@@ -2,7 +2,7 @@
     $.fn.hippoPasswordStrength = function(options) {
         options = options || {};
 
-        this.bind('focus', function() {
+        this.bind('focusout', function() {
             update.call(this);
         });
 
