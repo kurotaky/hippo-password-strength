@@ -6,7 +6,11 @@
 <script src="jquery.hippo-password-strength.js"></script>
 <script>
 $(function(){
-    $('.password').hippoPasswordStrength();
+    $('.password').hippoPasswordStrength({
+        indicator_path: "images/", // default "images/"
+        indicator_prefix: "strength_", // default "password_strength"
+        indicator_ext: "gif" // default "gif"
+    });
 });
 </script>
 </head>
