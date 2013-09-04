@@ -24,21 +24,24 @@
         });
 
         function update() {
-            var indicator_prefix = !!options.indicator_prefix ?
-                                     options.indicator_prefix : "password_strength";
-            var password = $(this).val();
-            var strengthLevel = getStrengthLevel(password);
+            $(this).bind('keyup focusout', function() {
+                var password = $(this).val();
+                var strengthLevel = getStrengthLevel(password);
 
-            var $indicator = null;
-            if (doesGetDataAttributes()) {
-                $indicator = $("#" + $(this).data("indicator"));
-            } else {
-                $indicator = $("#" + $(this).attr("data-indicator"));
-            }
-            for (var i=1; i < 5; i++) {
-                $indicator.removeClass(indicator_prefix + String(i));
-            }
-            $indicator.addClass(indicator_prefix + String(strengthLevel));
+                var $indicator = null;
+                if (doesGetDataAttributes()) {
+                    $indicator = $("#" + $(this).data("indicator"));
+                } else {
+                    $indicator = $("#" + $(this).attr("data-indicator"));
+                }
+                var matches = $indicator.attr("src").match(/(.*)\d.(...)/);
+                var indicator_prefix = matches[1];
+                var indicator_ext = matches[2];
+                for (var i=1; i < 5; i++) {
+                    $indicator.attr("src", indicator_prefix + String(i) + '.' + indicator_ext);
+                }
+                $indicator.attr("src", indicator_prefix + String(strengthLevel) + '.' + indicator_ext);
+            });
         }
 
         function doesGetDataAttributes() {
