@@ -19,7 +19,7 @@
                     timerId = setTimeout(function() {
                         update.call(elem);
                         timerId = null;
-                    }, 250);
+                    }, 500);
                 };
             })());
         });
