@@ -16,7 +16,7 @@ hippo password strength checker.
 
 ```html
 <input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel">
-<div id="strengthLevel" class="password_strength password_strength1"></div>
+<div id="strengthLevel" class="password_strength pass_state01"></div>
 ```
 
 ### CSS
@@ -26,19 +26,19 @@ hippo password strength checker.
   height: 22px;
 }
 
-.password_strength1 {
+.pass_state01 {
   background-image: url("images/strength_1.gif");
 }
 
-.password_strength2 {
+.pass_state02 {
   background-image: url("images/strength_2.gif");
 }
 
-.password_strength3 {
+.pass_state03 {
   background-image: url("images/strength_3.gif");
 }
 
-.password_strength4 {
+.pass_state04 {
   background-image: url("images/strength_4.gif");
 }
 ```
@@ -53,9 +53,10 @@ $('.password').hippoPasswordStrength();
 // Custom indicator prefix
 //
 // For example
-// level1: <div id="strengthLevel" class="pass_state01"><div>
-// level2: <div id="strengthLevel" class="pass_state02"><div>
+// level1: <div id="strengthLevel" class="password_strength pass_state01"><div>
+// level2: <div id="strengthLevel" class="password_strength pass_state02"><div>
 // ...
+
 $('.password').hippoPasswordStrength({
     indicator_prefix: "pass_state0"
 });
