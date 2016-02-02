@@ -58,7 +58,8 @@ $('.password').hippoPasswordStrength();
 // ...
 
 $('.password').hippoPasswordStrength({
-    indicator_prefix: "pass_state0"
+    indicator_prefix: "pass_state0",
+    banned_words: "password company_name website_name"
 });
 ```
 

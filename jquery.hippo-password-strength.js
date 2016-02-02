@@ -55,25 +55,99 @@
             return false;
         }
 
+        // Return only one copy of each of the unique characters in the string
+        // e.g. "AaaaBbbbA" returns "AaBb"
+        function uniqueCharacters(s) {
+            var chars = {}, rv = '';
+
+            for (var i = 0; i < s.length; ++i) {
+                if (!(s[i] in chars)) {
+                    chars[s[i]] = 1;
+                    rv += s[i];
+                }
+            }
+
+            return rv;
+        }
+
+        // Count the number of character classes in the string,
+        // Uppercase letters, lowercase letters, numbers, and symbols
+        function getCharacterClasses(str) {
+            var characterClasses = 0;
+
+            // Lowercase
+            if (str.match(/[a-z]/)) {
+                characterClasses++;
+            }
+            // Uppercase
+            if (str.match(/[A-Z]/)) {
+                characterClasses++;
+            }
+            // Numerals
+            if (str.match(/[0-9]/)) {
+                characterClasses++;
+            }
+            // Symbols (anything that isn't lower,upper,numbers)
+            if (str.match(/[^a-zA-Z0-9]/)) {
+                characterClasses++;
+            }
+
+            return characterClasses;
+        }
+
         function getStrengthLevel(password) {
             var strengthLevel = 1;
 
-            if (password.length < 6) {
-                strengthLevel = 1;
+            console.log(password);
+            
+            // Anything matching any banned words (e.g. 'password') is immediately rejected
+            var banned_words = !!options.banned_words ? options.banned_words : "password";
+            banned_words = banned_words.split(/\s/);
+            for (w in banned_words) {
+                if(password.match(new RegExp(banned_words[w], "gi"))) {
+                    console.log(banned_words[w]);
+                    return 1;
+                }
             }
-            if (password.length >= 6 && password.match(/[a-zA-Z]+/) && password.match(/[0-9]+/)) {
+
+            // Start by giving a raw score based on length
+            if (password.length >= 14) {
+                strengthLevel = 4;
+            } else if (password.length >= 12) {
+                strengthLevel = 3;
+            } else if (password.length >= 8) {
                 strengthLevel = 2;
             }
-            if (password.length >= 8 && password.match(/[a-zA-Z]+/) && password.match(/[0-9]+/)) {
-                strengthLevel = 3;
+
+            // Count character classes
+            characterClasses = getCharacterClasses(password);
+
+            // More character classes gives a bonus; fewer takes away a point
+            if (characterClasses == 4) {
+                strengthLevel += 2;
+            } else if (characterClasses == 3) {
+                strengthLevel += 1;
+            } else if (characterClasses == 1) {
+                strengthLevel -= 1;
             }
-            if (password.length >= 12 && password.match(/[a-z]/) && password.match(/[A-Z]/) && password.match(/[0-9]/)) {
+
+            // If the password contains less than 50% unique characters (e.g. "aaaaBBBB#")
+            // then it instantly fails
+            if (uniqueCharacters(password).length < (password.length / 2)) {
+                strengthLevel = 0;
+            }
+
+            // Can't have a password stronger than 4, or weaker than 1
+            if (strengthLevel > 4) {
                 strengthLevel = 4;
+            } else if (strengthLevel < 1) {
+              strengthLevel = 1;
             }
-            if (password.match(/^(.)\1+$/)) {
-                strengthLevel = 1;
-            }
+
+            console.log(strengthLevel);
+
             return strengthLevel;
         }
+
     };
 })(jQuery);
