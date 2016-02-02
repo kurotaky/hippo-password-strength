@@ -97,15 +97,12 @@
 
         function getStrengthLevel(password) {
             var strengthLevel = 1;
-
-            console.log(password);
             
             // Anything matching any banned words (e.g. 'password') is immediately rejected
             var banned_words = !!options.banned_words ? options.banned_words : "password";
             banned_words = banned_words.split(/\s/);
             for (w in banned_words) {
                 if(password.match(new RegExp(banned_words[w], "gi"))) {
-                    console.log(banned_words[w]);
                     return 1;
                 }
             }
@@ -143,8 +140,6 @@
             } else if (strengthLevel < 1) {
               strengthLevel = 1;
             }
-
-            console.log(strengthLevel);
 
             return strengthLevel;
         }
