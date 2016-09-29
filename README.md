@@ -62,6 +62,12 @@ $('.password').hippoPasswordStrength({
 });
 ```
 
+## Development & Test
+```
+npm install
+npm test
+```
+
 ## Thanks to…
 
 * [@kihaco](http://github.com/kihaco)
