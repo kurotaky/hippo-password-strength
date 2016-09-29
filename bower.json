@@ -1,0 +1,23 @@
+{
+  "name": "hippo-password-strength",
+  "version": "1.2.0",
+  "description": "Hippo password strength checker.",
+  "main": "jquery.hippo-password-strength.js",
+  "authors": [
+    "Yuta Kurotaki"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jQuery",
+    "password",
+    "strength"
+  ],
+  "homepage": "https://github.com/kurotaky/hippo-password-strength",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
