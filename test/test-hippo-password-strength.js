@@ -16,8 +16,8 @@ describe('.hippoPasswordStrength()', function() {
 
   describe('less than 6 characters', function() {
     it('shoud be changed to pass_state01', function() {
-      $('.password').val('passw');
       $('.password').focus();
+      $('.password').val('passw');
       $('.password').focusout();
       expect($('#strengthLevel').hasClass('pass_state01')).to.be.true;
     });
@@ -25,8 +25,8 @@ describe('.hippoPasswordStrength()', function() {
 
   describe('6 characters (numbers and characters)', function() {
     it('shoud be changed to pass_state02', function() {
-      $('.password').val('passw0');
       $('.password').focus();
+      $('.password').val('passw0');
       $('.password').focusout();
       expect($('#strengthLevel').hasClass('pass_state02')).to.be.true;
     });
@@ -34,17 +34,17 @@ describe('.hippoPasswordStrength()', function() {
 
   describe('8 characters (numbers and characters)', function() {
     it('shoud be changed to pass_state03', function() {
-      $('.password').val('passw0rd');
       $('.password').focus();
+      $('.password').val('passw0rd');
       $('.password').focusout();
       expect($('#strengthLevel').hasClass('pass_state03')).to.be.true;
     });
   });
 
-  describe('12 characters (numbers and characters)', function() {
+  describe('12 characters (numbers and uppercase characters)', function() {
     it('shoud be changed to pass_state04', function() {
-      $('.password').val('passw0rdAABB');
       $('.password').focus();
+      $('.password').val('passw0rdAABB');
       $('.password').focusout();
       expect($('#strengthLevel').hasClass('pass_state04')).to.be.true;
     });
