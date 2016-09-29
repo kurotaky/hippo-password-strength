@@ -1,5 +1,4 @@
-jquery.hippo-password-strength.js
-===============================
+# jquery.hippo-password-strength.js [![Build Status](https://travis-ci.org/kurotaky/hippo-password-strength.svg)](https://travis-ci.org/kurotaky/hippo-password-strength)
 
 hippo password strength checker.
 
@@ -60,6 +59,12 @@ $('.password').hippoPasswordStrength();
 $('.password').hippoPasswordStrength({
     indicator_prefix: "pass_state0"
 });
+```
+
+## Development & Test
+```
+npm install
+npm test
 ```
 
 ## Thanks to…

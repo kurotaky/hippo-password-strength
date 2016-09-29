@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hippo password strength test</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" href="../password_strength.css">
+  </head>
+  <body>
+    <input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel">
+    <div id="strengthLevel" class="password_strength pass_state01"></div>
+
+    <!-- mocha UI -->
+    <div id="mocha"></div>
+
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+
+    <script>mocha.setup('bdd')</script>
+
+    <script src="../jquery.hippo-password-strength.js"></script>
+
+    <!-- Test Sample -->
+    <script>
+      var expect = chai.expect;
+      describe('.hippoPasswordStrength()', function() {
+        before(function() {
+          $('.password').hippoPasswordStrength({
+            indicator_prefix: "pass_state0"
+          });
+        });
+
+        describe('less than 6 characters', function() {
+          it('shoud be changed to pass_state01', function() {
+            $('.password').focus();
+            $('.password').val('passw');
+            $('.password').focusout();
+            expect($('#strengthLevel').hasClass('pass_state01')).to.be.true;
+          });
+        });
+      });
+    </script>
+
+    <!-- Run -->
+    <script>
+      mocha.checkLeaks();
+      //mocha.globals(['jQuery']);
+      mocha.run();
+    </script>
+  </body>
+</html>

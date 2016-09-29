@@ -1,0 +1,28 @@
+{
+  "name": "hippo-password-strength",
+  "version": "1.2.0",
+  "description": "Hippo password strength checker.",
+  "main": "jquery.hippo-password-strength.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurotaky/hippo-password-strength.git"
+  },
+  "author": "Yuta Kurotaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurotaky/hippo-password-strength/issues"
+  },
+  "homepage": "https://github.com/kurotaky/hippo-password-strength#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jquery": "^3.1.1",
+    "jsdom": "^9.5.0",
+    "mocha": "^3.0.2"
+  }
+}
