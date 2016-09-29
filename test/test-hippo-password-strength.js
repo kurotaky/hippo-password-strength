@@ -1,7 +1,11 @@
-//jQuery = require('jquery');
-//var chai = require('chai');
-
+var jsdom = require('jsdom');
+global.document = jsdom.jsdom('<input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel"><div id="strengthLevel" class="password_strength pass_state01"></div>');
+global.window = document.defaultView;
+var $ = jQuery = require('jquery');
+var chai = require('chai');
 var expect = chai.expect;
+
+require('../jquery.hippo-password-strength.js');
 
 describe('.hippoPasswordStrength()', function() {
   before(function() {

@@ -21,8 +21,26 @@
 
     <script src="../jquery.hippo-password-strength.js"></script>
 
-    <!-- Test -->
-    <script src="test-hippo-password-strength.js"></script>
+    <!-- Test Sample -->
+    <script>
+      var expect = chai.expect;
+      describe('.hippoPasswordStrength()', function() {
+        before(function() {
+          $('.password').hippoPasswordStrength({
+            indicator_prefix: "pass_state0"
+          });
+        });
+
+        describe('less than 6 characters', function() {
+          it('shoud be changed to pass_state01', function() {
+            $('.password').focus();
+            $('.password').val('passw');
+            $('.password').focusout();
+            expect($('#strengthLevel').hasClass('pass_state01')).to.be.true;
+          });
+        });
+      });
+    </script>
 
     <!-- Run -->
     <script>
