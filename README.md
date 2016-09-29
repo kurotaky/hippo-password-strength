@@ -1,4 +1,4 @@
-jquery.hippo-password-strength.js
+# jquery.hippo-password-strength.js
 [![Build Status](https://travis-ci.org/kurotaky/hippo-password-strength.svg)](https://travis-ci.org/kurotaky/hippo-password-strength)
 ===============================
 
