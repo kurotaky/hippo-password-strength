@@ -1,6 +1,6 @@
 //jQuery = require('jquery');
-
 //var chai = require('chai');
+
 var expect = chai.expect;
 
 describe('.hippoPasswordStrength()', function() {
@@ -10,8 +10,17 @@ describe('.hippoPasswordStrength()', function() {
     });
   });
 
+  describe('less than 6 characters', function() {
+    it('shoud be changed to pass_state01', function() {
+      $('.password').val('passw');
+      $('.password').focus();
+      $('.password').focusout();
+      expect($('#strengthLevel').hasClass('pass_state01')).to.be.true;
+    });
+  });
+
   describe('6 characters (numbers and characters)', function() {
-    it('shoud be pass_state02', function() {
+    it('shoud be changed to pass_state02', function() {
       $('.password').val('passw0');
       $('.password').focus();
       $('.password').focusout();
@@ -20,7 +29,7 @@ describe('.hippoPasswordStrength()', function() {
   });
 
   describe('8 characters (numbers and characters)', function() {
-    it('shoud be pass_state03', function() {
+    it('shoud be changed to pass_state03', function() {
       $('.password').val('passw0rd');
       $('.password').focus();
       $('.password').focusout();
@@ -29,7 +38,7 @@ describe('.hippoPasswordStrength()', function() {
   });
 
   describe('12 characters (numbers and characters)', function() {
-    it('shoud be pass_state04', function() {
+    it('shoud be changed to pass_state04', function() {
       $('.password').val('passw0rdAABB');
       $('.password').focus();
       $('.password').focusout();
