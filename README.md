@@ -1,6 +1,7 @@
 # jquery.hippo-password-strength.js
 
 [![Build Status](https://travis-ci.org/kurotaky/hippo-password-strength.svg)](https://travis-ci.org/kurotaky/hippo-password-strength)
+[![npm version](https://badge.fury.io/js/hippo-password-strength.svg)](https://badge.fury.io/js/hippo-password-strength)
 [![Bower version](https://badge.fury.io/bo/hippo-password-strength.svg)](https://badge.fury.io/bo/hippo-password-strength)
 
 hippo password strength checker.
