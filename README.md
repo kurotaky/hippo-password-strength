@@ -1,4 +1,7 @@
-# jquery.hippo-password-strength.js [![Build Status](https://travis-ci.org/kurotaky/hippo-password-strength.svg)](https://travis-ci.org/kurotaky/hippo-password-strength)
+# jquery.hippo-password-strength.js
+
+[![Build Status](https://travis-ci.org/kurotaky/hippo-password-strength.svg)](https://travis-ci.org/kurotaky/hippo-password-strength)
+[![Bower version](https://badge.fury.io/bo/hippo-password-strength.svg)](https://badge.fury.io/bo/hippo-password-strength)
 
 hippo password strength checker.
 
@@ -6,14 +9,17 @@ hippo password strength checker.
 [Demo page is here.](http://kuro96.heteml.jp/hippo-password-strength/hippo.html)
 
 ## Installation
-```html
-<script src="/path/to/jquery.hippo-password-strength.js"></script>
+### Bower
+```
+bower install hippo-password-strength
 ```
 
 ## Example Usage
 ### HTML
 
 ```html
+<script src="/path/to/jquery.hippo-password-strength.js"></script>
+
 <input class="password" type="password" size="30" name="params[password]" value="" data-indicator="strengthLevel">
 <div id="strengthLevel" class="password_strength pass_state01"></div>
 ```
