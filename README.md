@@ -10,6 +10,10 @@ hippo password strength checker.
 [Demo page is here.](http://kuro96.heteml.jp/hippo-password-strength/hippo.html)
 
 ## Installation
+### npm
+```
+npm install hippo-password-strength
+```
 ### Bower
 ```
 bower install hippo-password-strength
